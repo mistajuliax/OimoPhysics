@@ -1,7 +1,4 @@
 OimoPhysics
 ===========
 
-A 3D physics engine.
-
-* For ActionScript 3.0
-* Alpha version
+3D physics engine ported to Haxe
