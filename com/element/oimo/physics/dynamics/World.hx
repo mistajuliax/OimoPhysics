@@ -564,7 +564,7 @@ class World
                     next.addedToIsland = true;
                     js = js.next;
                 }
-            }            while ((stackCount != 0));
+            } while ((stackCount != 0));
             
             // update velocities
             var gx : Float = gravity.x * timeStep;
@@ -637,7 +637,7 @@ class World
                 }
             }
             numIslands++;
-            base = base.next;
+            if (base != null) /*TODO*/ base = base.next;
         }
         var time2 : Int = Math.round(haxe.Timer.stamp() * 1000);
         performance.solvingTime = time2 - time1;
