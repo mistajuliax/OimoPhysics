@@ -34,7 +34,7 @@ class BoxBoxCollisionDetector extends CollisionDetector
     private var clipVertices1 : Array<Float>;
     private var clipVertices2 : Array<Float>;
     private var used : Array<Bool>;
-    private var INF : Float = 1 / 0;
+    private var INF : Float = std.Math.POSITIVE_INFINITY;//1 / 0;
     
     public function new()
     {

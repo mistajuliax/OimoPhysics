@@ -224,7 +224,7 @@ class RigidBody
     
     private var massInfo : MassInfo = new MassInfo();
 
-    public var rb:fox.trait.RigidBody;
+    public var prestep:Void->Void;
     
     /**
 		 * 新しく RigidBody オブジェクトを作成します。
@@ -237,10 +237,8 @@ class RigidBody
 		 * @param	ay 回転軸の y 成分
 		 * @param	az 回転軸の z 成分
 		 */
-    public function new(rb:fox.trait.RigidBody, x : Float = 0, y : Float = 0, z : Float = 0, rad : Float = 0, ax : Float = 0, ay : Float = 0, az : Float = 0)
+    public function new(x : Float = 0, y : Float = 0, z : Float = 0, rad : Float = 0, ax : Float = 0, ay : Float = 0, az : Float = 0)
     {
-        this.rb = rb;
-
         position = new Vec3(x, y, z);
         var len : Float = ax * ax + ay * ay + az * az;
         if (len > 0) {

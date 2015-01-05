@@ -315,6 +315,7 @@ class World
         var time1 : Int = Math.round(haxe.Timer.stamp() * 1000);
         var body : RigidBody = rigidBodies;
         while (body != null){
+            if (body.prestep != null) body.prestep();
             body.addedToIsland = false;
             if (body.sleeping) {
                 var lv : Vec3 = body.linearVelocity;
@@ -446,17 +447,8 @@ class World
     }
 
     public function checkContact(name1:String, name2:String):Bool {
-        var n1, n2;
-        var contact = this.contacts;
-        while (contact != null) {
-            n1 = contact.body1.name;
-            n2 = contact.body2.name;
-            if((n1 == name1 && n2 == name2) || (n2 == name1 && n1 == name2)) {
-                if(contact.touching) return true;
-                else return false;
-            }
-            else contact = contact.next;
-        }
+        if (getContact(name1, name2) != null) return true;
+        
         return false;
     }
 

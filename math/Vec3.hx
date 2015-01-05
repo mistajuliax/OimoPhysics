@@ -57,6 +57,13 @@ class Vec3
         this.z = z;
         return this;
     }
+
+    public function set(x,y,z):Vec3{
+        this.x = x;
+        this.y = y;
+        this.z = z;
+        return this;
+    }
     
     /**
 		 * this = v1 + v2
